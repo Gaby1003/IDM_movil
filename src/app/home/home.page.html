@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="container my-auto">
+    <ion-row>
+        <ion-col class="col-md-6 mx-auto mt-5 py-5 px-5">
+            <h1 class="text-center">LOGIN</h1>
+                <div class="form-group mt-4">
+                    <ion-text for="email" class="form-label">Correo</ion-text>
+                    <ion-input type="text" class="form-control" aria-placeholder="Ingrese el correo"
+                      interface="action-sheet" id="email" (ionChange)="read($event, 'email')" ></ion-input>
+                </div>
+                <div class="form-group mt-4">
+                    <ion-text for="password" class="form-label">Contraseña</ion-text>
+                    <ion-input type="password" class="form-control" aria-placeholder="Ingrese la contraseña"  id="password"
+                    interface="action-sheet" (ionChange)="read($event, 'password')"></ion-input>
+                </div>
+                <div class="form-group d-grid gap-2 col-6 mx-auto mt-4">
+                    <ion-button type="submit" class="primary col-6 mx-auto" (click)="onSubmit()">Enviar</ion-button>
+                </div>
+        </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

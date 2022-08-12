@@ -1,0 +1,36 @@
+<ion-content >
+  <ion-list style="border-color: gray;">
+    <div class="mt-3">
+      <ion-item class="head" class="row">
+          <h3 class="col-8 mt-1" style="color: #0d6efd;"><b>Lista de usuarios</b></h3>
+          <ion-button class="col-3 mt-0" type="submit" color="success" (click)="onAdd()">Agregar</ion-button>
+      </ion-item>
+    </div>
+
+      <ion-item href="" *ngFor="let user of users" class="mt-2 mb-2">
+          <ion-text>
+            <ion-img src="/assets/img/901408560-6-of-1.png">
+            </ion-img>
+            <h3 style="text-align: center"><b>{{user.FullName}}</b></h3>
+
+            <p><b> {{user.DocumentType}} </b> <a> {{user.DocumentNumber}} </a></p>
+            <p><b>Departamento:</b><a> {{user.DepartamentName}} </a></p>
+            <p><b>Fecha de finalización de contrato:</b><a> {{user.ContractEndDate | date:'medium'}} </a></p>
+            <p><b>Correo:</b><a> {{user.Email}} </a></p>
+            <p><b>Posición:</b><a> {{user.Position}} </a></p>
+            <p><b>Estado:</b><a> {{user.State}} </a></p>
+            <p><b>Fecha de terminación:</b><a> {{user.TerminationDate | date:'medium'}} </a></p>
+            <div class="center">
+              <ion-button type="submit" color="success" (click)="onEdit()">Editar</ion-button>
+              <ion-button type="submit" color="danger " (click)="onDelete()">Eliminar</ion-button>
+            </div>
+          </ion-text>
+        </ion-item>
+
+
+
+</ion-list>
+
+
+
+</ion-content>

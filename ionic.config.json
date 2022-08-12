@@ -1,0 +1,7 @@
+{
+  "name": "IDM_movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
