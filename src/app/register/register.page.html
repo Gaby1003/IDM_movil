@@ -1,79 +1,75 @@
 <ion-header >
   <h5>Formulario de Registro</h5>
-  <ion-img src="../../assets/img/logo-01.png"></ion-img>
-
 </ion-header>
 
 <ion-content>
-<div class="background-fondoWfokko">
-
-  <ion-list>
-
     <ion-card>
-
       <form [formGroup]="registerForm">
        <ion-grid class="form-group">
         <ion-row>
-          <ion-col class="lbl"><ion-label> Nombres: </ion-label></ion-col>
-          <ion-col><ion-input placeholder="*Nombres" class="form-control fokko-input" type="text" (ionChange)="read($event, 'name')" interface="action-sheet"></ion-input></ion-col>
+          <ion-col class="lbl"><ion-label> Nombre Completo: </ion-label></ion-col>
+          <ion-col><ion-input placeholder="*Nombres Completo" class="form-control fokko-input" type="text" (ionChange)="read($event, 'FullName')" interface="action-sheet"></ion-input></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="lbl"><ion-label>Apellidos: </ion-label></ion-col>
-          <ion-col><ion-input placeholder="*Apellidos" class="fokko-input form-control" type="text"  (ionChange)="read($event, 'lastname')" interface="action-sheet"></ion-input></ion-col>
+          <ion-col class="lbl"><ion-label>Tipo de documento: </ion-label></ion-col>
+          <ion-col><ion-input placeholder="*Tipo de documento" class="fokko-input form-control" type="text"  (ionChange)="read($event, 'DocumentType')" interface="action-sheet"></ion-input></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="lbl"><ion-label>Número de documento: </ion-label></ion-col>
+          <ion-col><ion-input placeholder="*Documento" class="fokko-input form-control" (ionChange)="read($event, 'DocumentNumber')" interface="action-sheet"></ion-input></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="lbl"><ion-label>Nombre de departamento: </ion-label></ion-col>
+          <ion-col><ion-input placeholder="*Departamento" class="fokko-input form-control" (ionChange)="read($event, 'DepartamentName')" interface="action-sheet"></ion-input></ion-col>
+        </ion-row>
+        <ion-row>
+
+          <ion-col class="lbl"><ion-label>Fecha de terminación de contrato: </ion-label></ion-col>
+            <ion-col> <ion-input id="date" class="ion-text-end"></ion-input></ion-col>
+            <ion-popover trigger="date"  size="cover" arrow="false" id="popover-bottom" >
+              <ng-template>
+                <ion-datetime
+                displayFormat="DDDD MMM D, YYYY" min="1910"
+                placeholder=" *Dia/Mes/Año" (ionChange)="read($event, 'ContractEndDate')"
+                interface="action-sheet"  position="floating"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+
         </ion-row>
         <ion-row>
           <ion-col class="lbl"><ion-label>Correo: </ion-label></ion-col>
-          <ion-col><ion-input placeholder="*Correo" class="fokko-input form-control" (ionChange)="read($event, 'email')" interface="action-sheet"></ion-input></ion-col>
+          <ion-col><ion-input placeholder="*Correo" class="fokko-input form-control" (ionChange)="read($event, 'Email')" interface="action-sheet"></ion-input></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="lbl"><ion-label>Móvil o Fijo: </ion-label></ion-col>
-          <ion-col><ion-input placeholder="*Teléfono" class="fokko-input form-control" (ionChange)="read($event, 'phone')" interface="action-sheet"></ion-input></ion-col>
+          <ion-col class="lbl"><ion-label>Posición: </ion-label></ion-col>
+          <ion-col><ion-input placeholder="*Posición" class="fokko-input form-control" (ionChange)="read($event, 'Position')" interface="action-sheet"></ion-input></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="lbl"><ion-label>Contraseña: </ion-label></ion-col>
-          <ion-col><ion-input placeholder="*Contraseña" type="password" class="fokko-input form-control" (ionChange)="read($event, 'password')" interface="action-sheet"></ion-input></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="lbl"><ion-label>Género: </ion-label></ion-col>
-          <ion-col><ion-select placeholder="*Seleccione Uno" (ionChange)="read($event, 'gender')" interface="action-sheet">
-                    <ion-select-option *ngFor="let gender of genders" value="{{gender.name}}">{{gender.name}}</ion-select-option>
-          </ion-select></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="lbl"><ion-label>Departamento: </ion-label></ion-col>
-          <ion-col><ion-select placeholder="*Seleccione Uno" [(ngModel)]="department" (ionChange)="readCities($event)" interface="action-sheet" class="form-control" formControlName="department">
-            <ion-select-option *ngFor="let dept of departments" value="{{dept}}">{{dept}}</ion-select-option>
-          </ion-select></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="lbl"><ion-label >Ciudad o Municipio: </ion-label></ion-col>
-          <ion-col><ion-select placeholder="*Seleccione Uno" (ionChange)="read($event, 'city')" interface="action-sheet">
-            <ion-select-option  *ngFor="let city of cities" class="form-control" value="{{city}}">{{city}}</ion-select-option>
-          </ion-select></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="lbl"><ion-label >Nacimiento: </ion-label></ion-col>
-          <ion-col ><ion-datetime displayFormat="DDDD MMM D, YYYY" min="1910" max="2021" placeholder=" *Dia/Mes/Año" (ionChange)="read($event, 'birthdate')" interface="action-sheet"></ion-datetime></ion-col>
+
+          <ion-col class="lbl"><ion-label>Fecha de terminación: </ion-label></ion-col>
+            <ion-col> <ion-input id="dateT" class="ion-text-end"></ion-input></ion-col>
+            <ion-popover trigger="dateT"  size="cover" arrow="false" id="popover-bottom" >
+              <ng-template>
+                <ion-datetime
+                displayFormat="DDDD MMM D, YYYY" min="1910"
+                placeholder=" *Dia/Mes/Año" (ionChange)="read($event, 'TerminationDate')"
+                interface="action-sheet"  position="floating"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+
         </ion-row>
         <ion-row>
           <ion-col size="12"><p mode="ios">Todos los campos con (*) son obligatorios</p></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col><ion-input color="warning" type="file" (change)="showPreview($event)"> Subir Foto </ion-input></ion-col>
-          <ion-col><ion-button color="warning"> Tomar Foto </ion-button></ion-col>
+          <ion-col><ion-input color="primary" type="file" (change)="showPreview($event)"> </ion-input></ion-col>
+          <ion-col><ion-button color="primary" (click)="tomarFoto()"> Tomar Foto </ion-button></ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-checkbox color="warning" checked="true"></ion-checkbox>
-          <ion-col><a color="black"> * </a> <a color="dark"> Acepto terminos y condiciones</a></ion-col>
-          <ion-col><ion-button color="warning"> Ver Condiciones </ion-button></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-button color="warning" (click)="registrar()" href="login"> Registrarse </ion-button></ion-col>
+          <ion-col><ion-button color="primary" (click)="registrar()" href="login"> Registrarse </ion-button></ion-col>
         </ion-row>
       </ion-grid>
     </form>
     </ion-card>
-  </ion-list>
-</div>
 </ion-content>

@@ -6,8 +6,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 
 @NgModule({
@@ -17,8 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    FormsModule,
+    HttpClientModule,
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, Camera],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

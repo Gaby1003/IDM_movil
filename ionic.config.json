@@ -1,7 +1,10 @@
 {
   "name": "IDM_movil",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }
